@@ -13,8 +13,11 @@
 )
 
 
-(defun my-reverse ()
-   ()
+(defun my-reverse (arg)
+   (if arg
+       (cons (my-reverse (cdr arg)) (car arg))
+       arg
+   )
 )
 
 (defun my-append ()
