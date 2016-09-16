@@ -20,7 +20,17 @@
    )
 )
 
-(defun my-append ()
-   ()
+(defun my-append-two (l1 l2)
+   (if l1
+       (my-append-two (cdr l1) (cons (car l1) l2))
+       l2
+   )
+)
+
+(defun my-append (l1 l2 &rest ls)
+   (if (> (length ls) 0)
+       (my-append (my-append l1 l2) ls)
+       (my-append-two (reverse l1) l2)
+   )
 )
 
