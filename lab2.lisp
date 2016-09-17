@@ -10,11 +10,12 @@
    )
 )
 
-
+;; skeleton written by Professor Lee for AI-16
 (defun my-reverse (arg)
-   (if arg
-       (cons (my-reverse (cdr arg)) (car arg))
-       arg
+   (cond
+      ((eq arg nil) nil)
+      ((eq (cdr arg) nil) (cons (car arg) nil))
+      ( t (append (my-reverse (cdr arg)) (cons (car arg) nil)))
    )
 )
 
