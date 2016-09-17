@@ -41,7 +41,7 @@
 ;; replacing all occurrences of A with B
 (defun my-replace (L A B)
    (cond
-      ((eq (L nil) '()))
+      ((eq L nil) '())
       ((eq (car L) A) (my-replace (cons B (cdr L)) A B))
       ( t (cons (car L) (my-replace (cdr L) A B)))
    )
