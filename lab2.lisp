@@ -30,13 +30,10 @@
 
 ;; takes a list L of atoms and an atom A, removing A from L
 (defun my-remove (L A)
-   ;;(princ L)
-   (if L
-      (if (equal (car L) A)
-          (my-remove (cdr L) A)
-          (cons (car L) (my-remove (cdr L) A))
-      )
-      '()
+   (cond
+      ((eq L nil) '())
+      ((eq (car L) A) (my-remove (cdr L) A))
+      ( t (cons (car L) (my-remove (cdr L) A)))
    )
 )
 
