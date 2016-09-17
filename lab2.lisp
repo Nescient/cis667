@@ -52,3 +52,15 @@
       '()
    )
 )
+
+;; takes a list L of atoms, an atom A, and an atom B
+;; replacing all occurrences of A with B
+(defun my-replace (L A B)
+   (if L
+      (if (equal (car L) A)
+          (cons B (cdr L))
+          (cons (car L) (my-replace (cdr L) A B))
+      )
+      '()
+   )
+)
