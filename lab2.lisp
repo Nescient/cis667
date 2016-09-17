@@ -58,7 +58,7 @@
 (defun my-replace (L A B)
    (if L
       (if (equal (car L) A)
-          (cons B (cdr L))
+          (my-replace (cons B (cdr L)) A B)
           (cons (car L) (my-replace (cdr L) A B))
       )
       '()
