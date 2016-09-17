@@ -46,7 +46,7 @@
    ;;(princ L)
    (if L
       (if (equal (car L) A)
-          (cdr L)
+          (my-remove (cdr L) A)
           (cons (car L) (my-remove (cdr L) A))
       )
       '()
