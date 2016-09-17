@@ -19,24 +19,12 @@
    )
 )
 
-(defun my-append-two (l1 l2)
-   (if l1
-       (my-append-two (cdr l1) (cons (car l1) l2))
-       l2
-   )
-)
-
-(defun my-append (l1 l2 &rest ls)
-   (princ ls)
-   (princ (length ls))
-   (princ (car ls))
-   (princ (cdr ls))
-   (write-char #\linefeed *standard-output*)
-   (let ((l (my-append-two l1 l2))))
-   (dolist (i ls ol) (my-append-two l i)
-   ;;(if (and (> (length ls) 0) (car ls))
-   ;;    (my-append (my-append-two (reverse l1) l2) (car ls) (cdr ls))
-   ;;    (my-append-two (reverse l1) l2)
+;; skeleton written by Professor Lee for AI-16
+(defun my-append (lst1 lst2)
+   (cond
+      ((eq lst1 nil) lst2)
+      ((eq lst2 nil) lst1)
+      ( t (cons (car lst1) (my-append (cdr lst1) lst2)))
    )
 )
 
