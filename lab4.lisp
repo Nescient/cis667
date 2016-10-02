@@ -21,3 +21,21 @@
    )
 )
 
+;; h1 is the 1-norm heuristic for romanian map
+(defmethod h1-cost ((problem route-finding-problem) city-name)
+   (get-add-norm (find-city city-name problem)
+                 (find-city (problem-goal problem) problem)
+                 problem
+   )
+)
+
+;; h2 is the max-norm heuristic for romanian map
+(defmethod h2-cost ((problem route-finding-problem) city-name)
+   (get-max-norm (find-city city-name problem)
+                 (find-city (problem-goal problem) problem)
+                 problem
+   )
+)
+
+;; (SETQ SEARCHERS '(TREE-A*-SEARCH A*-SEARCH TREE-IDA*-SEARCH))
+;; ((compare-search-algorithms #'(lambda () (make-romanian-problem :goal 'Iasi :initial-state 'Timisoara)) SEARCHERS)
