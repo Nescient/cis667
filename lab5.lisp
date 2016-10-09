@@ -9,6 +9,16 @@
    )
 )
 
+(defun custom-print (puzrow)
+   (dolist (x puzrow)
+      (cond
+         ((eq (car puzrow) nil) nil)
+         ((eq (car puzrow) 0) princ ".")
+         (t (princ (car puzrow)))
+      )
+   )
+)
+
 (defun display (puzlist)
    (print (subseq puzlist 0 3))
    (print (subseq puzlist 3 6))
