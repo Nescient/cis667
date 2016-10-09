@@ -12,16 +12,17 @@
 (defun custom-print (puzrow)
    (dolist (x puzrow)
       (cond
-         ((eq x nil) nil)
-         ((eq x 0) princ ".")
+         ((eq x nil) (write-char #\return *standard-output*)(write-char #\linefeed *standard-output*))
+         ((eq x 0) (princ "."))
          (t (princ x))
       )
+      (princ "  ")
    )
 )
 
 (defun display (puzlist)
-   (print (subseq puzlist 0 3))
-   (print (subseq puzlist 3 6))
-   (print (subseq puzlist 6 9))
+   (custom-print (subseq puzlist 0 3))
+   (custom-print (subseq puzlist 3 6))
+   (custom-print (subseq puzlist 6 9))
    puzlist
 )
