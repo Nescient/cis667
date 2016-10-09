@@ -12,9 +12,9 @@
 (defun custom-print (puzrow)
    (dolist (x puzrow)
       (cond
-         ((eq (car puzrow) nil) nil)
-         ((eq (car puzrow) 0) princ ".")
-         (t (princ (car puzrow)))
+         ((eq x nil) nil)
+         ((eq x 0) princ ".")
+         (t (princ x))
       )
    )
 )
